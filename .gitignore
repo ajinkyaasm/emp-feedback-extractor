@@ -8,7 +8,7 @@ wheels/
 
 # Virtual environments
 .venv
-
+app/__pycache__
 app/.env
 *.parquet
 
