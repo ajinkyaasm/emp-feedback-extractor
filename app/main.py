@@ -129,16 +129,19 @@ def extract_review(payload: FeedbackIn):
 
     response = requests.post(GROQ_URL, headers=headers, json=body)
     if response.status_code != 200:
-        raise HTTPException(status_code=500, detail=data)
+        raise HTTPException(
+            status_code=500,
+            detail=response.text,
+        )
 
     data = response.json()
-    print(data)
+    # print(data)
 
     try:
         call = data["choices"][0]["message"]["tool_calls"][0]
         # print(call)
         feedback = json.loads(call["function"]["arguments"])
-        print(feedback)
+        # print(feedback)
         new_df = pd.DataFrame(
             [
                 {
