@@ -62,7 +62,7 @@ Example Response
 ## Installation
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/ajinkyaasm/emp-feedback-extractor
 cd structured-feedback-extractor
 
 python -m venv .venv
